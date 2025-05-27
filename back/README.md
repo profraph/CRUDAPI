@@ -10,7 +10,39 @@ https://crudapi-red.vercel.app
 
 ## Endpoints
 
-### 1. Création d&apos;utilisateur
+### 1. Liste des utilisateurs
+
+**Endpoint** : `/api/users`  
+**Méthode** : GET  
+**URL complète** : `https://crudapi-red.vercel.app/api/users`
+
+**Exemple de requête** :
+```javascript
+fetch('https://crudapi-red.vercel.app/api/users', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+```
+
+**Réponse** :
+```json
+{
+  "data": [
+    {
+      "id": "user123",
+      "type": "admin"
+    },
+    {
+      "id": "user456",
+      "type": "user"
+    }
+  ]
+}
+```
+
+### 2. Création d&apos;utilisateur
 
 **Endpoint** : `/api/create`  
 **Méthode** : POST  
@@ -48,7 +80,7 @@ fetch('https://crudapi-red.vercel.app/api/create', {
 }
 ```
 
-### 2. Suppression d&apos;utilisateur
+### 3. Suppression d&apos;utilisateur
 
 **Endpoint** : `/api/delete`  
 **Méthode** : DELETE  
@@ -82,7 +114,7 @@ fetch('https://crudapi-red.vercel.app/api/delete', {
 }
 ```
 
-### 3. Modification d&apos;utilisateur
+### 4. Modification d&apos;utilisateur
 
 **Endpoint** : `/api/edit`  
 **Méthode** : PUT  
@@ -120,7 +152,7 @@ fetch('https://crudapi-red.vercel.app/api/edit', {
 }
 ```
 
-### 4. Vérification du type d&apos;utilisateur
+### 5. Vérification du type d&apos;utilisateur
 
 **Endpoint** : `/api/checkType`  
 **Méthode** : POST  

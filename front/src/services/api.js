@@ -111,4 +111,9 @@ export const api = {
       throw error;
     }
   },
+
+  getUsers: async () => {
+    const response = await fetch(`${API_BASE_URL}/api/users`);
+    return handleResponse(response);
+  },
 }; 
