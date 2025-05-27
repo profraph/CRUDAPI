@@ -10,7 +10,53 @@ https://crudapi-red.vercel.app
 
 ## Endpoints
 
-### 1. Liste des utilisateurs
+### 1. Authentification
+
+**Endpoint** : `/api/login`  
+**Méthode** : POST  
+**URL complète** : `https://crudapi-red.vercel.app/api/login`
+
+**Corps de la requête** :
+```json
+{
+  "id": "string",
+  "mdp": "string"
+}
+```
+
+**Exemple de requête** :
+```javascript
+fetch('https://crudapi-red.vercel.app/api/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "id": "user123",
+    "mdp": "password123"
+  })
+})
+```
+
+**Réponse (succès)** :
+```json
+{
+  "success": true,
+  "data": {
+    "id": "user123",
+    "type": "admin"
+  }
+}
+```
+
+**Réponse (erreur)** :
+```json
+{
+  "error": "Identifiants invalides"
+}
+```
+
+### 2. Liste des utilisateurs
 
 **Endpoint** : `/api/users`  
 **Méthode** : GET  
@@ -42,7 +88,7 @@ fetch('https://crudapi-red.vercel.app/api/users', {
 }
 ```
 
-### 2. Création d&apos;utilisateur
+### 3. Création d&apos;utilisateur
 
 **Endpoint** : `/api/create`  
 **Méthode** : POST  
@@ -80,7 +126,7 @@ fetch('https://crudapi-red.vercel.app/api/create', {
 }
 ```
 
-### 3. Suppression d&apos;utilisateur
+### 4. Suppression d&apos;utilisateur
 
 **Endpoint** : `/api/delete`  
 **Méthode** : DELETE  
@@ -114,7 +160,7 @@ fetch('https://crudapi-red.vercel.app/api/delete', {
 }
 ```
 
-### 4. Modification d&apos;utilisateur
+### 5. Modification d&apos;utilisateur
 
 **Endpoint** : `/api/edit`  
 **Méthode** : PUT  
@@ -152,7 +198,7 @@ fetch('https://crudapi-red.vercel.app/api/edit', {
 }
 ```
 
-### 5. Vérification du type d&apos;utilisateur
+### 6. Vérification du type d&apos;utilisateur
 
 **Endpoint** : `/api/checkType`  
 **Méthode** : POST  
